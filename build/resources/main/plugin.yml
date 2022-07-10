@@ -1,0 +1,11 @@
+name: ConflictBattle
+author: Evan
+version: DEV
+main: net.evan.conflictbattle.ConflictBattle
+commands:
+  kit:
+    description: Selection des kits
+  holotest:
+    description: Test des hologrammes
+  totem:
+    description: Totem debug command

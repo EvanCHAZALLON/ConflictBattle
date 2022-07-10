@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group 'net.evan'
+version '1.0-SNAPSHOT'
+
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+  maven {
+    url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    content {
+      includeGroup 'org.bukkit'
+      includeGroup 'org.spigotmc'
+    }
+  }
+  maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+  maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+  maven { url "https://repo.codemc.io/repository/maven-public/" }
+  mavenCentral()
+  mavenLocal()
+}
+
+dependencies {
+  compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
+  implementation files('C:/Users/rushw/Desktop/VersaMC/plugins/game-api-1.0-all.jar')
+  implementation files('C:/Users/rushw/Desktop/VersaMC/plugins/TagAPI.jar')
+  compileOnly 'com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.9'
+}
+
+jar {
+   destinationDir = file("C:/Users/rushw/Desktop/VersaMC/plugins")
+}
+
+test {
+    useJUnitPlatform()
+}
